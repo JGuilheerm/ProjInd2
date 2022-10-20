@@ -1,0 +1,83 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Codificação de Mensagens</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital@1&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas id="Matrix"></canvas>
+    <script src="./script/coderain.js"></script>
+    <div id="wrapper">
+        <div style="position: absolute; left: 27%; top: 30px; width: 200px; height:100vh;" >
+            <form class="decoder">
+                <h2>Criptógrafo de Cifra de César & base64 </h2>
+        
+                <textarea
+                  id="entrada"
+                  cols="55"
+                  rows="7"
+                  required
+                  placeholder=" Escreva aqui a sua mensagem..."
+                ></textarea>
+          
+                <fieldset>
+                  <legend>Método</legend>
+                  <select class="metodo" required>
+                    <option>Escolha o método</option>
+                    <option>Cifra de Cesar</option>
+                    <option>Base 64</option>
+                  </select>
+                </fieldset>
+          
+                <div class="passo">
+                  <input
+                    id="chave"
+                    type="range"
+                    value="21"
+                    min="1"
+                    max="99"
+                    oninput="this.nextElementSibling.value = this.value"
+                  />
+                  <output>21</output>
+                </div>
+          
+                <fieldset class="tipo">
+                  <div class="coddecod">
+                    <input
+                      type="radio"
+                      name="coddecod"
+                      value="msg-codigo"
+                      id="codificar"
+                      checked
+                    />
+                    <label for="codificar">Codificar</label>
+                  </div>
+                  <div class="cod-decod">
+                    <input
+                      type="radio"
+                      name="coddecod"
+                      value="codigo-msg"
+                      id="decodificar"
+                    />
+                    <label for="decodificar">Decodificar</label>
+                  </div>
+                </fieldset>
+          
+                <output class="saida"><p class="resposta"></p></output>
+          
+                <button class="enviar">Codificar!</button>
+              </form>
+        </div>
+    
+    </div>
+    <script src="./script/criptografia.js"></script>
+    <script src="./script/cifraDeCesar.js"></script>
+    <script src="./script/base64.js"></script>
+</body>
+</html>
