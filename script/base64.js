@@ -7,7 +7,6 @@ function codificarBase64(mensagem) {
 
 function decodificarBase64(codigo) {
   var valido = true;
-  // para evitar Failed to execute 'atob'
   for (var i = 0; i < codigo.length; i++) {
     var charCode = codigo[i].charCodeAt();
     if (
